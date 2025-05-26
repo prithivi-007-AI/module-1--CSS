@@ -1,0 +1,96 @@
+//index.HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Local Community Event Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Internal CSS: Body background */
+    body {
+      background-color: #f0f8ff; /* Light blue background */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="color: red;">Welcome to the Local Community Event Portal</h1> <!-- Inline style -->
+  </header>
+
+  <main>
+    <section class="upcoming-events">
+      <h2>Upcoming Events</h2>
+      <p>Join us for various community events happening this month!</p>
+      <button class="cta-button">Register Now</button>
+    </section>
+
+    <section class="volunteer-opportunities">
+      <h2>Volunteer Opportunities</h2>
+      <p>Get involved and make a difference in your community.</p>
+      <button class="cta-button">Volunteer Today</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Local Community Event Portal</p>
+  </footer>
+</body>
+</html>
+
+//Style.css
+/* ========================= */
+/*        Header Styles      */
+/* ========================= */
+header {
+    background-color: #4CAF50; /* Green background for header */
+    color: white;              /* White text color */
+    padding: 10px;            /* Padding around header */
+    text-align: center;        /* Centered text */
+}
+
+/* ========================= */
+/*      Main Content Styles   */
+/* ========================= */
+main {
+    padding: 20px;            /* Padding for main content */
+}
+
+/* Style for Upcoming Events Section */
+.upcoming-events {
+    margin-bottom: 20px;      /* Space below the upcoming events section */
+}
+
+/* Style for Volunteer Opportunities Section */
+.volunteer-opportunities {
+    margin-bottom: 20px;      /* Space below the volunteer opportunities section */
+}
+
+/* ========================= */
+/*        Footer Styles      */
+/* ========================= */
+footer {
+    background-color: #333;   /* Dark background for footer */
+    color: white;             /* White text color */
+    text-align: center;       /* Centered text */
+    padding: 10px;           /* Padding around footer */
+}
+
+/* ========================= */
+/*      Button Styles        */
+/* ========================= */
+
+/* Style for main CTA button */
+.cta-button {
+    background-color: #007BFF; /* Blue background for button */
+    color: white;              /* White text color */
+    padding: 10px 20px;       /* Padding for button */
+    border: none;              /* No border */
+    border-radius: 5px;       /* Rounded corners */
+    cursor: pointer;           /* Pointer cursor on hover */
+}
+
+/* Style for button hover effect */
+.cta-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
