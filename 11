@@ -1,0 +1,255 @@
+//index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Community Bulletin with Multi-Column Layout</title>
+  <!-- Google Fonts Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header id="mainHeader">
+    <h1>Local Community Event Portal</h1>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="#upcoming">Upcoming Events</a></li>
+        <li><a href="#volunteer">Volunteer</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2 id="upcoming">Featured Events</h2>
+
+    <section class="eventCard">
+      <h3 class="event-title">Spring Festival</h3>
+      <p class="description">Celebrate the arrival of spring with music and food!</p>
+    </section>
+
+    <section class="eventCard">
+      <h3 class="event-title">Charity Run</h3>
+      <p class="description">Join us for a 5K run to support local charities.</p>
+    </section>
+
+    <h2 id="volunteer">Volunteer Opportunities</h2>
+    <section class="eventCard">
+      <h3 class="event-title">Community Clean-up</h3>
+      <p class="description">Help us keep our neighborhoods clean and green.</p>
+    </section>
+
+    <h2>Community Bulletin</h2>
+    <section class="community-bulletin eventCard">
+      <p>
+        Welcome to our community bulletin board! This is where we share important updates, news, and announcements for our local area. Check back regularly for the latest information about what's happening in our neighborhood.
+      </p>
+      <p>
+        We're excited to announce that the new community center will be opening next month. There will be an open house event where everyone can tour the facilities and learn about the programs that will be offered. Volunteers are needed to help with setup and welcoming guests - please contact the organizers if you can assist.
+      </p>
+    </section>
+
+    <h2 id="admin">Events Admin Table</h2>
+    <section class="eventCard">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Event Name</th>
+            <th>Date</th>
+            <th>Location</th>
+            <th>Capacity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Spring Festival</td>
+            <td>April 10, 2023</td>
+            <td>Central Park</td>
+            <td>500</td>
+          </tr>
+          <tr>
+            <td>Charity Run</td>
+            <td>May 15, 2023</td>
+            <td>City Stadium</td>
+            <td>300</td>
+          </tr>
+          <tr>
+            <td>Community Clean-up</td>
+            <td>June 5, 2023</td>
+            <td>Neighborhoods</td>
+            <td>200</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <h2 id="contact">Contact Form</h2>
+    <section class="eventCard">
+      <form>
+        <label for="name">Name:</label><br />
+        <input id="name" type="text" name="name" placeholder="Your name" /><br /><br />
+
+        <label for="email">Email:</label><br />
+        <input id="email" type="email" name="email" placeholder="example@email.com" /><br /><br />
+
+        <label for="message">Message:</label><br />
+        <textarea id="message" rows="4" placeholder="Your message"></textarea><br /><br />
+
+        <button type="submit" class="cta-button">Send</button>
+      </form>
+    </section>
+
+    <h2>Visibility Comparison</h2>
+    <section class="eventCard">
+      <p id="visibleParagraph">This paragraph is visible.</p>
+      <p id="hiddenParagraph">This paragraph is invisible but takes up space. (visibility: hidden)</p>
+      <p id="noneParagraph">This paragraph is removed from layout and invisible. (display: none)</p>
+    </section>
+  </main>
+
+  <script>
+    // Debugging helper - logs media query changes
+    const mediaQueryList = window.matchMedia('(max-width: 768px)');
+    function handleScreenChange(e) {
+      console.log(`Screen changed to ${e.matches ? 'mobile' : 'desktop'} view`);
+    }
+    mediaQueryList.addListener(handleScreenChange);
+    handleScreenChange(mediaQueryList);
+  </script>
+</body>
+</html>
+
+//style.css
+/* styles.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(30, 59, 92, 0.9);
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #1a1a1a;
+  font-family: 'Montserrat', Arial, sans-serif;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Header styles */
+#mainHeader {
+  background-color: #3498db;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.6);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* Navigation */
+.nav-menu {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  margin: 10px 0;
+  gap: 25px;
+}
+
+.nav-menu a {
+  color: #ffdd57;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+/* Event cards */
+.eventCard {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  padding: 25px 30px;
+  margin: 0 auto 2rem;
+  max-width: 1200px;
+  border: 2px solid #0a9396;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Community bulletin */
+.community-bulletin {
+  column-count: 2;
+  column-gap: 30px;
+  column-rule: 1px solid gray;
+  padding: 15px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  #mainHeader {
+    font-size: 2rem;
+    padding: 15px;
+  }
+  
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .community-bulletin {
+    column-count: 1;
+  }
+  
+  .eventCard {
+    padding: 15px;
+    margin: 0 10px 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #mainHeader {
+    font-size: 1.5rem;
+  }
+  
+  .eventCard {
+    padding: 10px;
+  }
+}
+
+/* Debugging helper */
+@media screen and (max-width: 768px) {
+  body::before {
+    content: "Mobile view (≤768px)";
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: red;
+    color: white;
+    padding: 5px;
+    z-index: 9999;
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  body::before {
+    content: "Desktop view (>768px)";
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: green;
+    color: white;
+    padding: 5px;
+    z-index: 9999;
+    font-size: 12px;
+  }
+}
