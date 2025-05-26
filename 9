@@ -1,0 +1,343 @@
+//index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Community Bulletin with Multi-Column Layout</title>
+  <!-- Google Fonts Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header id="mainHeader">
+    <h1>Local Community Event Portal</h1>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="#upcoming">Upcoming Events</a></li>
+        <li><a href="#volunteer">Volunteer</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2 id="upcoming">Featured Events</h2>
+
+    <section class="eventCard">
+      <h3 class="event-title">Spring Festival</h3>
+      <p class="description">Celebrate the arrival of spring with music and food!</p>
+    </section>
+
+    <section class="eventCard">
+      <h3 class="event-title">Charity Run</h3>
+      <p class="description">Join us for a 5K run to support local charities.</p>
+    </section>
+
+    <h2 id="volunteer">Volunteer Opportunities</h2>
+    <section class="eventCard">
+      <h3 class="event-title">Community Clean-up</h3>
+      <p class="description">Help us keep our neighborhoods clean and green.</p>
+    </section>
+
+    <h2>Community Bulletin</h2>
+    <section class="community-bulletin eventCard">
+      <p>
+        Welcome to our community bulletin board! This is where we share important updates, news, and announcements for our local area. Check back regularly for the latest information about what's happening in our neighborhood.
+      </p>
+      <p>
+        We're excited to announce that the new community center will be opening next month. There will be an open house event where everyone can tour the facilities and learn about the programs that will be offered. Volunteers are needed to help with setup and welcoming guests - please contact the organizers if you can assist.
+      </p>
+    </section>
+
+    <h2 id="admin">Events Admin Table</h2>
+    <section class="eventCard">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Event Name</th>
+            <th>Date</th>
+            <th>Location</th>
+            <th>Capacity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Spring Festival</td>
+            <td>April 10, 2023</td>
+            <td>Central Park</td>
+            <td>500</td>
+          </tr>
+          <tr>
+            <td>Charity Run</td>
+            <td>May 15, 2023</td>
+            <td>City Stadium</td>
+            <td>300</td>
+          </tr>
+          <tr>
+            <td>Community Clean-up</td>
+            <td>June 5, 2023</td>
+            <td>Neighborhoods</td>
+            <td>200</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <h2 id="contact">Contact Form</h2>
+    <section class="eventCard">
+      <form>
+        <label for="name">Name:</label><br />
+        <input id="name" type="text" name="name" placeholder="Your name" /><br /><br />
+
+        <label for="email">Email:</label><br />
+        <input id="email" type="email" name="email" placeholder="example@email.com" /><br /><br />
+
+        <label for="message">Message:</label><br />
+        <textarea id="message" rows="4" placeholder="Your message"></textarea><br /><br />
+
+        <button type="submit" class="cta-button">Send</button>
+      </form>
+    </section>
+
+    <h2>Visibility Comparison</h2>
+    <section class="eventCard">
+      <p id="visibleParagraph">This paragraph is visible.</p>
+      <p id="hiddenParagraph">This paragraph is invisible but takes up space. (visibility: hidden)</p>
+      <p id="noneParagraph">This paragraph is removed from layout and invisible. (display: none)</p>
+    </section>
+  </main>
+  
+</body>
+</html>
+
+//style.css
+/* Universal selector to reset margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body background with fallback color and background image */
+body {
+  background-color: rgba(30, 59, 92, 0.9);
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #1a1a1a;
+  font-family: 'Montserrat', Arial, sans-serif;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Element selector for all h2 tags */
+h2 {
+  font-family: 'Lora', serif;
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(90deg, #005f73 0%, #0a9396 50%, #94d2bd 100%);
+  border-radius: 5px;
+  display: inline-block;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-align: center;
+  width: 100%;
+}
+
+/* ID selector for banner */
+#mainHeader {
+  background-color: #3498db;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.6);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* Navigation menu styling */
+.nav-menu {
+  list-style-type: none; /* remove bullets */
+  list-style-position: inside;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 0 0;
+  margin: 10px 0 0 0;
+  gap: 25px;
+}
+
+.nav-menu li {
+  padding: 5px 10px;
+  margin: 0;
+}
+
+/* Link styles and pseudo-classes */
+.nav-menu a:link {
+  color: #ffdd57; /* soft yellow */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:visited {
+  color: #f4a261; /* muted orange */
+}
+
+.nav-menu a:hover {
+  color: #e76f51; /* vibrant coral */
+  text-decoration: underline;
+}
+
+.nav-menu a:active {
+  color: #2a9d8f; /* teal */
+  text-decoration: none;
+}
+
+/* Class selector for event containers */
+.eventCard {
+  background-color: #ffffffcc;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Grouping selector for h3 and p */
+h3,
+p {
+  font-family: 'Lora', serif;
+  color: #002e2e;
+}
+
+h3.event-title {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.8rem;
+  text-align: left;
+  letter-spacing: 0.05em;
+}
+
+p.description {
+  line-height: 1.75;
+  font-size: 1.1rem;
+  text-align: justify;
+  text-transform: none;
+  letter-spacing: 0.03em;
+  font-style: normal;
+}
+/* existing styles unchanged above... */
+
+/* Table Styling */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.admin-table th,
+.admin-table td {
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  background-color: #f8f9fa;
+}
+
+.admin-table th {
+  background-color: #005f73;
+  color: white;
+  font-weight: 700;
+}
+
+.admin-table tbody tr:nth-child(even) {
+  background-color: #e0f7fa;
+}
+
+.admin-table tbody tr:hover {
+  background-color: #b2ebf2;
+}
+/* Existing styles preserved above... */
+
+/* Box model spacing for eventCard */
+.eventCard {
+  background-color: #ffffffcc;
+  border-radius: 8px;
+  padding: 25px 30px;      /* Increased padding for breathing space */
+  margin-bottom: 2rem;     /* More margin between sections */
+  border: 2px solid #0a9396; /* Border added */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+/* Form field outlines on focus */
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline-offset: 2px;
+  transition: outline-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Highlight selected fields in form */
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+  outline: 3px solid #005f73;
+  border-color: #005f73;
+  background-color: #e0f7fa;
+}
+
+/* Visibility demo */
+
+/* Paragraph visible normally */
+#visibleParagraph {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Paragraph hidden but occupies space */
+#hiddenParagraph {
+  visibility: hidden;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #6c757d;
+}
+
+/* Paragraph removed from layout */
+#noneParagraph {
+  display: none;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #dc3545;
+}
+/* Existing styles above unchanged... */
+
+/* Multi-column layout for community bulletin */
+.community-bulletin {
+  column-count: 2;
+  column-gap: 30px;
+  column-rule: 1px solid gray;
+  padding: 15px;
+  background-color: #ffffffcc;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  font-family: 'Lora', serif;
+  color: #002e2e;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
